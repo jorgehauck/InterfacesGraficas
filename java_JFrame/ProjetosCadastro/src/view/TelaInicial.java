@@ -145,8 +145,13 @@ public class TelaInicial extends JFrame {
 		btnSair.setIcon(new ImageIcon("C:\\Users\\Jos\u00E9 Jorge Hauck Jr\\Downloads\\sair.png"));
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Obrigado!","Mensagem",JOptionPane.INFORMATION_MESSAGE);
-				System.exit(0);
+				Object[] options = {"Sim","Não"};
+				int i = JOptionPane.showOptionDialog(null, "Tem certeza que deseja sair?", "Saída", 
+						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+				if(i == JOptionPane.YES_OPTION)
+				{
+					System.exit(0);
+				}
 			}
 		});
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 11));
